@@ -1,0 +1,24 @@
+.slider-container {
+    position: relative;
+    width: 600px; /* Adjust the width as needed */
+    margin: auto;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  button:first-child {
+    left: 0;
+  }
+  
+  button:last-child {
+    right: 0;
+  }
+  
