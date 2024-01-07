@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Slider from "../Slider/Slider";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState(""); // Set the default active tab
@@ -14,10 +15,7 @@ const Navbar = () => {
   return (
     <div>
       <header class="relative bg-white">
-        {/* <p class="flex h-10 items-center justify-center bg-red-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
-          Get free delivery on orders over $100
-        </p> */}
-        <div className="w-100 ">
+        <div className="w-full">
           <Slider />
         </div>
         <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,14 +46,14 @@ const Navbar = () => {
 
               {/* <!-- Logo --> */}
               <div class="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link to="/">
                   <span class="sr-only">Your Company</span>
                   <img
-                    class="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    class="h-14 w-auto"
+                    src="https://img.favpng.com/6/5/12/ecommerce-logo-png-favpng-c9XwFQHwsmZeVNHU6BRWQgabB.jpg"
                     alt=""
                   />
-                </a>
+                </Link>
               </div>
 
               {/* <!-- Flyout menus --> */}
@@ -512,45 +510,24 @@ const Navbar = () => {
 
               <div class="ml-auto flex items-center">
                 <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <a
-                    href="#"
+                  <Link
+                    to="/login"
                     class="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
-                    Sign in
-                  </a>
+                    Login
+                  </Link>
                   <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                  <a
-                    href="#"
+                  <Link
+                    to="/signup"
                     class="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Create account
-                  </a>
-                </div>
-
-                {/* <!-- Search --> */}
-                <div class="flex lg:ml-6">
-                  <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
-                    <span class="sr-only">Search</span>
-                    <svg
-                      class="h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      />
-                    </svg>
-                  </a>
+                  </Link>
                 </div>
 
                 {/* <!-- Cart --> */}
                 <div class="ml-4 flow-root lg:ml-6">
-                  <a href="#" class="group -m-2 flex items-center p-2">
+                  <Link to="/cart" class="group -m-2 flex items-center p-2">
                     <svg
                       class="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                       fill="none"
@@ -569,7 +546,7 @@ const Navbar = () => {
                       0
                     </span>
                     <span class="sr-only">items in cart, view bag</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

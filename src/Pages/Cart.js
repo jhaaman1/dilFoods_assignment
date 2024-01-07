@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   return (
     <div>
-      <section class="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10">
+      <section className="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10">
         {/* <!-- Desktop cart table  --> */}
-        <section class="hidden w-full max-w-[1200px] grid-cols-1 gap-3 px-5 pb-10 md:grid">
-          <table class="table-fixed">
-            <thead class="h-16 bg-neutral-100">
+        <section className="hidden w-full max-w-[1200px] grid-cols-1 gap-3 px-5 pb-10 md:grid">
+          <table className="table-fixed">
+            <thead className="h-16 bg-neutral-100">
               <tr>
                 <th>ITEM</th>
                 <th>PRICE</th>
@@ -21,43 +21,43 @@ const Cart = () => {
               {/* <!-- 1 --> */}
 
               <tr
-                class="h-[100px] border-b"
+                className="h-[100px] border-b"
                 style={{ border: "2px solid red" }}
               >
-                <td class="align-middle">
-                  <div class="flex">
+                <td className="align-middle">
+                  <div className="flex">
                     <img
-                      class="w-[90px]"
+                      className="w-[90px]"
                       src="./assets/images/bedroom.png"
                       alt="bedroom image"
                     />
-                    <div class="ml-3 flex flex-col justify-center">
-                      <p class="text-xl font-bold">ITALIAN BED</p>
-                      <p class="text-sm text-gray-400">Size: XL</p>
+                    <div className="ml-3 flex flex-col justify-center">
+                      <p className="text-xl font-bold">ITALIAN BED</p>
+                      <p className="text-sm text-gray-400">Size: XL</p>
                     </div>
                   </div>
                 </td>
-                <td class="mx-auto text-center">&#36;320</td>
-                <td class="align-middle">
-                  <div class="flex items-center justify-center">
-                    <button class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500">
+                <td className="mx-auto text-center">&#36;320</td>
+                <td className="align-middle">
+                  <div className="flex items-center justify-center">
+                    <button className="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500">
                       &minus;
                     </button>
-                    <div class="flex h-8 w-8 cursor-text items-center justify-center border-t border-b active:ring-gray-500">
+                    <div className="flex h-8 w-8 cursor-text items-center justify-center border-t border-b active:ring-gray-500">
                       1
                     </div>
-                    <button class="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500">
+                    <button className="flex h-8 w-8 cursor-pointer items-center justify-center border duration-100 hover:bg-neutral-100 focus:ring-2 focus:ring-gray-500 active:ring-2 active:ring-gray-500">
                       &#43;
                     </button>
                   </div>
                 </td>
-                <td class="mx-auto text-center">&#36;320</td>
-                <td class="align-middle">
+                <td className="mx-auto text-center">&#36;320</td>
+                <td className="align-middle">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
-                    class="m-0 h-5 w-5 cursor-pointer"
+                    className="m-0 h-5 w-5 cursor-pointer"
                   >
                     <path
                       fill-rule="evenodd"
@@ -71,28 +71,28 @@ const Cart = () => {
           </table>
         </section>
 
-        <section class="mx-auto w-full px-4 md:max-w-[400px]">
-          <div class="">
-            <div class="border py-5 px-4 shadow-md">
-              <p class="font-bold">ORDER SUMMARY</p>
+        <section className="mx-auto w-full px-4 md:max-w-[400px]">
+          <div className="">
+            <div className="border py-5 px-4 shadow-md">
+              <p className="font-bold">ORDER SUMMARY</p>
 
-              <div class="flex justify-between border-b py-5">
+              <div className="flex justify-between border-b py-5">
                 <p>Subtotal</p>
                 <p>$1280</p>
               </div>
 
-              <div class="flex justify-between border-b py-5">
+              <div className="flex justify-between border-b py-5">
                 <p>Shipping</p>
                 <p>Free</p>
               </div>
 
-              <div class="flex justify-between py-5">
+              <div className="flex justify-between py-5">
                 <p>Total</p>
                 <p>$1280</p>
               </div>
 
               <Link to='/checkout'>
-                <div class="w-full md:max-w-[400px] rounded mt-1 bg-red-900 px-16 py-2 text-white">
+                <div className="w-full md:max-w-[400px] rounded mt-1 bg-red-900 px-16 py-2 text-white">
                   Proceed to checkout
                 </div>
               </Link>
