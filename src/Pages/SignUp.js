@@ -1,72 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { userSignup } from "../Redux/Auth/Action";
 
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector((store) => store.AuthReducer);
+  console.log("isAuth", isAuth);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email && password && fullName) {
+      dispatch(
+        userSignup({
+          email: email,
+          password: password,
+          fullName: fullName,
+        })
+      )
+        .then((res) => {
+          console.log('res',res)
+          alert("Authentication successful!");
+        })
+        .catch((error) => {
+          console.error(error)
+          alert( "Something went wrong",);
+        });
+    }
+  };
+
   return (
     <div>
-      <section class="mx-auto mt-10 w-full flex-grow mb-10 max-w-[1200px] px-5">
-        <div class="container mx-auto border px-5 py-5 shadow-sm md:w-1/2">
-          <div class="">
-            <p class="text-4xl text-center font-bold">CREATE AN ACCOUNT</p>
+      <section className="mx-auto mt-10 w-full flex-grow mb-10 max-w-[1200px] px-5">
+        <div className="container mx-auto border px-5 py-5 shadow-sm md:w-1/2">
+          <div className="">
+            <p className="text-4xl text-center font-bold">CREATE AN ACCOUNT</p>
           </div>
 
-          <form class="mt-6 flex flex-col">
+          <form className="mt-6 flex flex-col">
             <label for="name">Full Name</label>
             <input
-              class="mb-3 mt-3 border px-4 py-2"
+              className="mb-3 mt-3 border px-4 py-2"
               type="text"
               placeholder="Aman Jha"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
             />
 
-            <label class="mt-3" for="email">
+            <label className="mt-3" for="email">
               Email Address
             </label>
             <input
-              class="mt-3 border px-4 py-2"
+              className="mt-3 border px-4 py-2"
               type="email"
               placeholder="user@mail.com"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
 
-            <label class="mt-5" for="email">
+            <label className="mt-5" for="email">
               Password
             </label>
             <input
-              class="mt-3 border px-4 py-2"
+              className="mt-3 border px-4 py-2"
               type="password"
               placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <input
+              className="mt-3 border px-4 py-2 cursor-pointer bg-red-700 text-white rounded"
+              type="submit"
+              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
+             onClick={handleSubmit}
             />
 
-            <label class="mt-5" for="email">
-              Confirm password
-            </label>
-            <input
-              class="mt-3 border px-4 py-2"
-              type="password"
-              placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;"
-            />
           </form>
 
-          <div class="mt-4 flex justify-between">
-            <form class="flex gap-2">
-              <input type="checkbox" />
-              <label for="checkbox">
-                I have read and agree with
-                <a href="#" class="text-violet-900">
-                  terms &amp; conditions
-                </a>
-              </label>
-            </form>
-          </div>
-
-          <div class="my-5 w-full text-center	 bg-red-700 py-2 text-white">
-            CREATE ACCOUNT
-          </div>
-
-          <p class="text-center">
+          <p className="text-center">
             Already have an account?
-            <Link to="/login" class="text-red-900">
+            <Link to="/login" className="text-red-900">
               Login now
-            </Link></p>
+            </Link>
+          </p>
         </div>
       </section>
     </div>

@@ -1,7 +1,7 @@
-// auth/actionTypes.js
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGOUT = 'LOGOUT';
-export const SET_ERROR = 'SET_ERROR';
-export const REGISTRATION_SUCCESS = 'REGISTRATION_SUCCESS';
+export const GET_AUTH_REQUEST = "GET_AUTH_REQUEST";
+export const GET_AUTH_SUCCESS = "GET_AUTH_SUCCESS";
+export const GET_AUTH_FAILURE = "GET_AUTH_FAILURE";
 
-// Add more action types as needed
+export const LOGOUT = "LOGOUT";
+
+export const CHECK_AUTH = "CHECK_AUTH";

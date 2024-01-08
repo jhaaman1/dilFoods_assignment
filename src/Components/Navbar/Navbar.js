@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import Slider from "../Slider/Slider";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getFromLS } from "../../Utils/Constant";
 
 const Navbar = () => {
-  const [activeTab, setActiveTab] = useState(""); // Set the default active tab
+  const [activeTab, setActiveTab] = useState("");
+  const auth = getFromLS("user");
+  console.log("isAuth", auth);
 
   const handleTabHover = (tab) => {
     setActiveTab(tab);
@@ -492,37 +496,37 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
-
-                  <a
-                    href="#"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Company
-                  </a>
-                  <a
-                    href="#"
-                    class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Stores
-                  </a>
                 </div>
               </div>
 
               <div class="ml-auto flex items-center">
                 <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                  <Link
-                    to="/login"
-                    class="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Login
-                  </Link>
-                  <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                  <Link
-                    to="/signup"
-                    class="text-sm font-medium text-gray-700 hover:text-gray-800"
-                  >
-                    Create account
-                  </Link>
+                  {auth ? (
+                    <>
+                      <p className="text-sm font-medium text-red-700 hover:text-gray-800">
+                        {`Welcome ${auth}`}
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <Link
+                        to="/login"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      >
+                        Login
+                      </Link>
+                      <span
+                        className="h-6 w-px bg-gray-200"
+                        aria-hidden="true"
+                      ></span>
+                      <Link
+                        to="/signup"
+                        className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                      >
+                        SignUp
+                      </Link>
+                    </>
+                  )}
                 </div>
 
                 {/* <!-- Cart --> */}

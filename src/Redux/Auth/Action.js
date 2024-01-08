@@ -1,51 +1,60 @@
-import axios from 'axios';
-import * as actionTypes from './ActionType';
+import axios from "axios";
+import * as type from "./ActionType";
 
-
-export const loginSuccess = (user) => ({
-  type: actionTypes.LOGIN_SUCCESS,
-  payload: user,
-});
-
-export const setError = (error) => ({
-  type: actionTypes.SET_ERROR,
-  payload: error,
-});
-
-export const registrationSuccess = () => ({
-  type: actionTypes.REGISTRATION_SUCCESS,
-});
-
-export const register = (userData) => async (dispatch) => {
-  try {
-    const response = await axios.post('http://localhost:8080/api/user-registration', userData);
-    console.log('res',userData)
-    if (response.data) {
-      alert(response.data.message)
-    }
-    if (!response.data) {
-      throw new Error(response.data.message || 'Registration failed');
-    }
-
-    dispatch(registrationSuccess());
-  } catch (error) {
-    console.error('Registration failed:', error);
-    dispatch(setError(error.message));
-  }
+const isAuthLoding = {
+  type: type.GET_AUTH_REQUEST,
 };
 
-export const login = (credentials) => async (dispatch) => {
-  try {
-    const response = await axios.post('http://localhost:8080/api/user-login', credentials);
-
-    if (!response.data.success) {
-      throw new Error(response.data.message || 'Login failed');
-    }
-
-    const user = response.data.user;
-    dispatch(loginSuccess(user));
-  } catch (error) {
-    // Dispatch an action to handle the error in the Redux state
-    dispatch(setError(error.message));
-  }
+const isAuthSuccess = (payload) => {
+  return {
+    type: type.GET_AUTH_SUCCESS,
+    payload: payload,
+  };
 };
+
+export const isAuthFailed = {
+  type: type.GET_AUTH_FAILURE,
+};
+
+export const logOut = {
+  type: type.LOGOUT,
+};
+
+export const checkAuthenticaion = {
+  type: type.CHECK_AUTH,
+};
+
+export const userSignup = (payload) => async (dispatch) => {
+  console.log('payload', payload);
+  dispatch(isAuthLoding);
+  return axios
+    .post(`http://localhost:8080/usersData`, payload)
+    .then(({ data }) => {
+      dispatch(isAuthSuccess(data));
+    })
+    .catch((error) => {
+      dispatch(isAuthFailed);
+      throw error;
+    });
+};
+
+export const userLogin = (payload) => async (dispatch) => {
+  dispatch(isAuthLoding);
+  return axios
+    .get(`http://localhost:8080/usersData`)
+    .then(({ data }) => {
+      dispatch(
+        isAuthSuccess(
+          data.find(
+            (el) =>
+              el.email === payload.email && el.password === payload.password
+          )
+        )
+      );
+    })
+    .catch((err) => {
+      dispatch(isAuthFailed);
+      throw err;
+    });
+};
+
