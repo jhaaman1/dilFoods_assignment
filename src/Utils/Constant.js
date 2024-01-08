@@ -1,6 +1,14 @@
 // save keys to local storage
+// export const saveToLS = (key, value) => {
+//   localStorage.setItem(key, JSON.stringify(value));
+// };
+
 export const saveToLS = (key, value) => {
-  localStorage.setItem(key, JSON.stringify(value));
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    return false;
+  }
 };
 
 // get keys from local storage

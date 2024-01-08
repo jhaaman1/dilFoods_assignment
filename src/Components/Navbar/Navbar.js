@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "../Slider/Slider";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getFromLS } from "../../Utils/Constant";
+import { getCartData } from "../../Redux/App/Action";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("");
   const auth = getFromLS("user");
-  console.log("isAuth", auth);
+  const dispatch = useDispatch();
+  const cart = useSelector(
+    (state) => state.AppReducer.cart
+  ); 
+  console.log('cart', cart)
+
+  useEffect(() => {
+    dispatch(getCartData());
+  }, [dispatch]);
 
   const handleTabHover = (tab) => {
     setActiveTab(tab);
@@ -547,7 +556,7 @@ const Navbar = () => {
                       />
                     </svg>
                     <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                      0
+                      {cart.length}
                     </span>
                     <span class="sr-only">items in cart, view bag</span>
                   </Link>

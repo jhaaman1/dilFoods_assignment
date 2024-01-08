@@ -25,7 +25,6 @@ export const checkAuthenticaion = {
 };
 
 export const userSignup = (payload) => async (dispatch) => {
-  console.log('payload', payload);
   dispatch(isAuthLoding);
   return axios
     .post(`http://localhost:8080/usersData`, payload)

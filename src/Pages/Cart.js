@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { getCartData } from "../Redux/App/Action";
 
 const Cart = () => {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.AppReducer.cart);
+console.log('data', data);
+  useEffect(() => {
+    dispatch(getCartData());
+  }, [dispatch]);
   return (
     <div>
       <section className="container mx-auto flex-grow max-w-[1200px] border-b py-5 lg:flex lg:flex-row lg:py-10">
@@ -18,11 +26,9 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody>
-              {/* <!-- 1 --> */}
 
               <tr
-                className="h-[100px] border-b"
-                style={{ border: "2px solid red" }}
+                className="h-[100px] "
               >
                 <td className="align-middle">
                   <div className="flex">
@@ -91,7 +97,7 @@ const Cart = () => {
                 <p>$1280</p>
               </div>
 
-              <Link to='/checkout'>
+              <Link to="/checkout">
                 <div className="w-full md:max-w-[400px] rounded mt-1 bg-red-900 px-16 py-2 text-white">
                   Proceed to checkout
                 </div>
