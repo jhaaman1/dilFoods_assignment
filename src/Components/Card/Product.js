@@ -25,7 +25,7 @@ const Product = () => {
       <div className="flex justify-between items-center">
         <h2 className="fw-600 mt-4 text-2xl">Products for you</h2>
       </div>
-      <div className="grid grid-rows-6 grid-cols-4  items-center mx-5 " >
+      <div className="grid grid-rows-6 grid-cols-4 gap-2  items-center " >
         {data.map((item) => (
           <Card key={item.id} data={item} />
         ))}

@@ -3,19 +3,19 @@ import Product from "../Components/Card/Product";
 
 const Home = () => {
   return (
-    <div>
+    <div className="m-auto" style={{width: '1400px'}}>
       <div
-        className="flex place-items-center w-1/2 m-auto h-100  " 
+        className="flex place-items-center w-3/5 m-auto h-100"
       >
-        <div className="bg-slate-50	w-1/2">
-          <div className="font-bold text-5xl font-serif decoration-gray-300 py-16">
+        <div className="bg-slate-50	w-1/2" >
+          <div className="font-bold text-5xl font-serif decoration-gray-300 py-14" >
             <span>Lowest Prices </span>
             <br />
             <span>Best Quality </span>
             <br />
             <span> Shopping </span>
           </div>
-          <div className="flex ps-4 pt-4 flex-wrap w-auto">
+          <div className="flex flex-nowrap w-auto">
             <div className="flex gap-2">
               <img
                 src="	https://images.meesho.com/images/pow/freeDelivery_jamun.svg"
