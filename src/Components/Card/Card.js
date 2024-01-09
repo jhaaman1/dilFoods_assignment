@@ -3,15 +3,15 @@ import { useDispatch } from "react-redux";
 import { postToCart } from "../../Redux/App/Action";
 
 const Card = ({ data }) => {
-  const { image_url, name, offPrice, price, ratingimg, strikedoffprice } =
-    data;
+  const { image_url, name, offPrice, price, ratingimg, strikedoffprice } = data;
 
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
     // Dispatch the action to add the product to the cart
     dispatch(postToCart(data));
-    alert("Product added to Cart successfully")
+    alert("Product added to Cart successfully");
+    window.location.reload();
   };
 
   return (
@@ -25,9 +25,9 @@ const Card = ({ data }) => {
       <div className="text-center text-slate-700	text-xl">
         <p>{name}</p>
       </div>
-      <div className="pl-4 mt-3 ">
+      {/* <div className="pl-4 mt-3 ">
         <img src={ratingimg} alt="" className="w-2/6" />
-      </div>
+      </div> */}
       <div className="flex gap-4 items-center pt-2">
         <p className="text-xl font-medium whitespace-nowrap">Rs {price}</p>
         <p className="line-through whitespace-nowrap"> {strikedoffprice}</p>
@@ -36,7 +36,7 @@ const Card = ({ data }) => {
         </p>
       </div>
       <button
-        className="relative mt-10 mx-6 text-white bg-red-500 px-4 py-2 rounded"
+        className="relative mt-10 mx-6 text-white bg-red-500 px-6 py-3 rounded-lg text-lg font-medium"
         onClick={handleAddToCart}
       >
         Add to Cart

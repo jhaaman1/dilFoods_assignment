@@ -48,13 +48,12 @@ const Home = () => {
               </div>
             </div>
           </div>
-         
         </div>
         <div className="">
           <img src="https://images.meesho.com/images/marketing/1678691617864_512.webp" />
         </div>
       </div>
-      <Product/>
+      <Product  />
     </div>
   );
 };

@@ -36,6 +36,15 @@ function Reducer(state = initialState, { type, payload }) {
     case ways.GET_CART_FAILURE:
       return { ...state, isError: true, isLoading: false };
 
+    case ways.REMOVE_CART_ITEM_REQUEST:
+      return { ...state, isLoading: true };
+
+    case ways.REMOVE_CART_ITEM_SUCCESS:
+      return { ...state, isLoading: false, isError: false };
+
+    case ways.REMOVE_CART_ITEM_FAILURE:
+      return { ...state, isError: true, isLoading: false };
+
     default:
       return state;
   }

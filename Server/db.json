@@ -1056,7 +1056,48 @@
       "strikedoffprice": " 995",
       "offPrice": "23% Off",
       "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
-      "id": 1
+      "id": 2,
+      "qty": 1
+    },
+    {
+      "image_url": "https://n3.sdlcdn.com/imgs/h/i/d/230X258_sharpened/NEUVIN-Cotton-Shirt-SDL695387961-1-51d5e.webp",
+      "name": "NEUVIN Cotton Shirt",
+      "price": " 675",
+      "strikedoffprice": " 1300",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "id": 3,
+      "qty": 1
+    },
+    {
+      "image_url": "https://n4.sdlcdn.com/imgs/h/v/b/230X258_sharpened/HEATHER-HUES-Polyester-Shirt-SDL872099684-1-f006a.webp",
+      "name": "HEATHER HUES Polyester Shirt ",
+      "price": " 599",
+      "strikedoffprice": " 1490",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 4
+    },
+    {
+      "image_url": "https://n4.sdlcdn.com/imgs/j/y/m/230X258_sharpened/FABISHO-White-Rayon-Shirt-Single-SDL795214362-1-63d69.jpeg",
+      "name": "FABISHO White Rayon Shirt ",
+      "price": " 359",
+      "strikedoffprice": " 999",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 5
+    },
+    {
+      "image_url": "https://n2.sdlcdn.com/imgs/j/x/3/230X258_sharpened/NUEVOSDAMAS-Black-Rayon-Shirt-Single-SDL620299086-1-4b742.webp",
+      "name": "NUEVOSDAMAS Black Rayon Shirt ",
+      "price": " 359",
+      "strikedoffprice": " 1999",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 6
     },
     {
       "image_url": "https://n3.sdlcdn.com/imgs/j/x/d/230X258_sharpened/FABISHO-Peach-Rayon-Shirt-Single-SDL191722408-1-fe00a.jpeg",
@@ -1065,7 +1106,38 @@
       "strikedoffprice": " 999",
       "offPrice": "23% Off",
       "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
-      "id": 2
+      "qty": 1,
+      "id": 7
+    },
+    {
+      "image_url": "https://n4.sdlcdn.com/imgs/i/d/e/230X258_sharpened/Mayra-Rayon-Shirt-SDL825592630-1-51725.jpeg",
+      "name": "Mayra Rayon Shirt ",
+      "price": " 399",
+      "strikedoffprice": " 995",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 8
+    },
+    {
+      "image_url": "https://n3.sdlcdn.com/imgs/j/x/d/230X258_sharpened/FABISHO-Peach-Rayon-Shirt-Single-SDL191722408-1-fe00a.jpeg",
+      "name": "FABISHO Peach Rayon Shirt ",
+      "price": " 359",
+      "strikedoffprice": " 999",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 9
+    },
+    {
+      "image_url": "https://n4.sdlcdn.com/imgs/i/d/e/230X258_sharpened/Mayra-Rayon-Shirt-SDL825592630-1-51725.jpeg",
+      "name": "Mayra Rayon Shirt ",
+      "price": " 399",
+      "strikedoffprice": " 995",
+      "offPrice": "23% Off",
+      "ratingimg": "https://media.istockphoto.com/vectors/five-stars-rating-vector-icon-vector-id1072182672?k=20&m=1072182672&s=612x612&w=0&h=tHn5kbSN_Rb-7rCNyVpY6p8q9x4qsxDBb2oSurtDTno=",
+      "qty": 1,
+      "id": 10
     }
   ]
 }
