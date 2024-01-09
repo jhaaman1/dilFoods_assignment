@@ -1,6 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { getFromLS } from "../Utils/Constant";
 
 const PlaceOrder = () => {
+  const auth = getFromLS("user");
+
   return (
     <div className="flex-grow">
       <section className="mt-20 px-4">
@@ -23,7 +27,7 @@ const PlaceOrder = () => {
             </svg>
 
             <p>
-              Thank you, <span className="font-bold">Sarah Johnson!</span>
+              Thank you, <span className="font-bold">{auth}!</span>
             </p>
             <p>Order is on the way!</p>
 

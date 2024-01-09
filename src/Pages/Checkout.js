@@ -1,7 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import SubTotal from "../Components/Cart/SubTotal";
 
 const Checkout = () => {
+ 
   return (
     <div>
       <nav className="mx-auto w-full mt-4 max-w-[1200px] px-5">
@@ -37,9 +40,8 @@ const Checkout = () => {
             <table className="hidden lg:table">
               <thead className="h-16 bg-neutral-100">
                 <tr>
-                  <th className="bg-red-600 text-white">ADDRESS</th>
+                  <th className="bg-red-600 text-white w-1/2">ADDRESS</th>
                   <th>PAYMENT METHOD</th>
-                  <th>ORDER REVIEW</th>
                 </tr>
               </thead>
             </table>
@@ -56,6 +58,7 @@ const Checkout = () => {
                       className="w-full border px-4 py-2 outline-yellow-400"
                       type="text"
                       placeholder="Sarah Johnson"
+                      required
                     />
                   </div>
 
@@ -68,6 +71,7 @@ const Checkout = () => {
                       className="w-full border px-4 py-2 outline-yellow-400"
                       type="text"
                       placeholder="sarahj@maybell.com"
+                      required
                       name=""
                       id=""
                     />
@@ -83,6 +87,7 @@ const Checkout = () => {
                     <input
                       className="w-full border px-4 py-2 outline-yellow-400"
                       type="text"
+                      required
                       placeholder="Big Serbian avenue, 18"
                     />
                   </div>
@@ -96,6 +101,7 @@ const Checkout = () => {
                       className="w-full border px-4 py-2 outline-yellow-400"
                       type="text"
                       placeholder="Belgrade"
+                      required
                       name=""
                       id=""
                     />
@@ -111,6 +117,7 @@ const Checkout = () => {
                     <input
                       x-mask="999999"
                       className="w-full border px-4 py-2 outline-yellow-400"
+                      required
                       placeholder="176356"
                     />
                   </div>
@@ -118,7 +125,7 @@ const Checkout = () => {
                   <div className="flex w-1/2 flex-col">
                     <label className="flex" for="name">
                       Recipient
-                      <span className="block text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 after:content-['*']"></span>
+                      <span className="block text-sm font-medium text-slate-700 after:ml-0.5 after:text-red-500 "></span>
                     </label>
                     <input
                       className="w-full border px-4 py-2 outline-yellow-400"
@@ -153,29 +160,7 @@ const Checkout = () => {
           {/* <!-- /form  --> */}
 
           {/* <!-- Summary  --> */}
-
-          <section className="mx-auto w-full px-4 md:max-w-[400px]">
-            <div className="">
-              <div className="border py-5 px-4 shadow-md">
-                <p className="font-bold">ORDER SUMMARY</p>
-
-                <div className="flex justify-between border-b py-5">
-                  <p>Subtotal</p>
-                  <p>$1280</p>
-                </div>
-
-                <div className="flex justify-between border-b py-5">
-                  <p>Shipping</p>
-                  <p>Free</p>
-                </div>
-
-                <div className="flex justify-between py-5">
-                  <p>Total</p>
-                  <p>$1280</p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <SubTotal />
         </section>
 
       </div>

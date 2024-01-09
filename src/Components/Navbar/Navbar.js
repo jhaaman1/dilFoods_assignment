@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import Slider from "../Slider/Slider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getFromLS } from "../../Utils/Constant";
+import { getFromLS, removeFromLS } from "../../Utils/Constant";
 import { getCartData } from "../../Redux/App/Action";
 
 const Navbar = () => {
   const [activeTab, setActiveTab] = useState("");
   const auth = getFromLS("user");
+  
   const dispatch = useDispatch();
   const cart = useSelector(
     (state) => state.AppReducer.cart
-  ); 
-  console.log('cart', cart)
+  );
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getCartData());
@@ -25,9 +26,15 @@ const Navbar = () => {
   const handleMenuLeave = () => {
     setActiveTab("");
   };
+
+  const handleLogout = () => {
+    removeFromLS("user");
+    navigate("/login");
+  };
+
   return (
-    <div>
-      <header className="relative bg-white">
+    <>
+      <header className="relative bg-white w-full">
         <div className="w-full">
           <Slider />
         </div>
@@ -82,11 +89,10 @@ const Navbar = () => {
                     >
                       {/* <!-- Item active: "border-indigo-600 text-indigo-600", Item inactive: "border-transparent text-gray-700 hover:text-gray-800" --> */}
                       <button
-                        className={`${
-                          activeTab === "women"
-                            ? "border-indigo-600 text-indigo-600"
-                            : "border-transparent text-gray-700 hover:text-gray-800"
-                        } relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out`}
+                        className={`${activeTab === "women"
+                          ? "border-indigo-600 text-indigo-600"
+                          : "border-transparent text-gray-700 hover:text-gray-800"
+                          } relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out`}
                       >
                         Women
                       </button>
@@ -304,11 +310,10 @@ const Navbar = () => {
                       onMouseEnter={() => handleTabHover("men")}
                     >
                       <button
-                        className={`${
-                          activeTab === "men"
-                            ? "border-indigo-600 text-indigo-600"
-                            : "border-transparent text-gray-700 hover:text-gray-800"
-                        } relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out`}
+                        className={`${activeTab === "men"
+                          ? "border-indigo-600 text-indigo-600"
+                          : "border-transparent text-gray-700 hover:text-gray-800"
+                          } relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out`}
                       >
                         Men
                       </button>
@@ -515,6 +520,12 @@ const Navbar = () => {
                       <p className="text-sm font-medium text-red-700 hover:text-gray-800">
                         {`Welcome ${auth}`}
                       </p>
+                      <div
+                        className="text-sm cursor-pointer font-medium text-gray-700 hover:text-gray-800"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </div>
                     </>
                   ) : (
                     <>
@@ -558,15 +569,16 @@ const Navbar = () => {
                     <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
                       {cart.length}
                     </span>
-                    <span className="sr-only">items in cart, view bag</span>
+
                   </Link>
+
                 </div>
               </div>
             </div>
           </div>
         </nav>
       </header>
-    </div>
+    </>
   );
 };
 

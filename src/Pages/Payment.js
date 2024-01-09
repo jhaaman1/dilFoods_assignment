@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SubTotal from "../Components/Cart/SubTotal";
 
 const Payment = () => {
   return (
@@ -14,7 +15,7 @@ const Payment = () => {
             <table className="hidden lg:table">
               <thead className="h-16 bg-neutral-100">
                 <tr>
-                  <th>ADDRESS</th>
+                  <th className="w-1/2">ADDRESS</th>
                   <th className="bg-red-600 text-white">PAYMENT METHOD</th>
                   {/* <th>ORDER REVIEW</th> */}
                 </tr>
@@ -115,28 +116,7 @@ const Payment = () => {
 
           {/* <!-- Summary  --> */}
 
-          <section className="mx-auto w-full px-4 md:max-w-[400px]">
-            <div className="">
-              <div className="border py-5 px-4 shadow-md">
-                <p className="font-bold">ORDER SUMMARY</p>
-
-                <div className="flex justify-between border-b py-5">
-                  <p>Subtotal</p>
-                  <p>$1280</p>
-                </div>
-
-                <div className="flex justify-between border-b py-5">
-                  <p>Shipping</p>
-                  <p>Free</p>
-                </div>
-
-                <div className="flex justify-between py-5">
-                  <p>Total</p>
-                  <p>$1280</p>
-                </div>
-              </div>
-            </div>
-          </section>
+          <SubTotal/>
         </section>
       </section>
     </div>

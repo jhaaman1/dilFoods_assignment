@@ -5,12 +5,10 @@ const Home = () => {
   return (
     <div>
       <div
-        className="w-4/5 m-auto h-100 flex justify-between "
-        // style={{ border: "2px solid red " }}
+        className="flex place-items-center w-1/2 m-auto h-100  " 
       >
-        <div className="bg-slate-50	">
-          {/* Text decoration remaining in below section */}
-          <div className="font-bold text-5xl font-serif decoration-gray-300 py-12">
+        <div className="bg-slate-50	w-1/2">
+          <div className="font-bold text-5xl font-serif decoration-gray-300 py-16">
             <span>Lowest Prices </span>
             <br />
             <span>Best Quality </span>
@@ -25,7 +23,6 @@ const Home = () => {
               />
               <div className="break-words w-20">
                 <span>Free Delivery</span>
-                {/* <span> </span> */}
               </div>
             </div>
             <div className="flex gap-2">
@@ -35,7 +32,6 @@ const Home = () => {
               />
               <div className="break-words w-20">
                 <span>Cash on Delivery</span>
-                {/* <span></span> */}
               </div>
             </div>
             <div className="flex gap-2">
@@ -49,11 +45,13 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="h-full">
           <img src="https://images.meesho.com/images/marketing/1678691617864_512.webp" />
         </div>
       </div>
-      <Product  />
+      <div className="w-4/5 place-items-center m-auto">
+        <Product />
+      </div>
     </div>
   );
 };

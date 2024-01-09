@@ -19,3 +19,11 @@ export const getFromLS = (key) => {
     return false;
   }
 };
+
+export const removeFromLS = (key) => {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error("Error removing item from local storage:", error);
+  }
+};

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getCartData, getData } from "../Redux/App/Action";
 import { Quantity } from "../Components/Cart/Quantity";
 import { Remove } from "../Components/Cart/Remove";
+import SubTotal from "../Components/Cart/SubTotal";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -64,43 +65,12 @@ const Cart = () => {
         </section>
 
         <section className="mx-auto w-full px-4 md:max-w-[400px]">
-          <div className="">
-            <div className="border py-5 px-4 shadow-md">
-              <p className="font-bold">ORDER SUMMARY</p>
-
-              <div className="flex justify-between border-b py-5">
-                <p>Subtotal</p>
-                <p>
-                  $
-                  {data
-                    .reduce((acc, item) => acc + item.qty * item.price, 0)
-                    .toFixed(2)}
-                </p>
-              </div>
-
-              <div className="flex justify-between border-b py-5">
-                <p>Shipping</p>
-                <p>Free</p>
-              </div>
-
-              <div className="flex justify-between py-5">
-                <p>Total</p>
-                <p>
-                  {" "}
-                  $
-                  {data
-                    .reduce((acc, item) => acc + item.qty * item.price, 0)
-                    .toFixed(2)}
-                </p>
-              </div>
-
-              <Link to="/checkout">
-                <div className="w-full md:max-w-[400px] rounded mt-1 bg-red-900 px-16 py-2 text-white">
-                  Proceed to checkout
-                </div>
-              </Link>
+          <SubTotal />
+          <Link to="/checkout">
+            <div className="w-4/5 mx-10 text-center md:max-w-[400px] rounded mt-1 bg-red-900 py-2 text-white">
+              Proceed to checkout
             </div>
-          </div>
+          </Link>
         </section>
       </section>
     </div>
